@@ -1,6 +1,6 @@
-# 🤖 Vobiz AI Voice Agent: The Ultimate Technical Guide
+# Vobiz AI Voice Agent — Python Voice API Example
 
-A production-grade, low-layer AI voice agent implementation. This system bridges the gap between traditional PSTN (Public Switched Telephone Network) and modern AI Intelligence using high-performance, real-time streaming.
+A Python example that bridges a PSTN phone call to a real-time AI voice agent over the Vobiz Voice API, using bidirectional audio streaming. `make_call.py` places an outbound call through the Vobiz REST API, `server.py` answers the Vobiz webhook with XML containing a bidirectional `<Stream>` element, and `agent.py` runs the WebSocket session: caller audio (mu-law 8 kHz) goes to Deepgram for transcription, the transcript goes to an OpenAI LLM, and the reply is synthesised with OpenAI TTS and streamed back to the call as `playAudio` events. Barge-in is handled with `clearAudio`.
 
 ---
 
@@ -291,8 +291,8 @@ Understanding the sequence of HTTP requests is vital for debugging.
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/Piyush-sahoo/Vobiz-Websockets.git
-cd Vobiz-Websockets
+git clone https://github.com/vobiz-ai/Vobiz-Python-Voice-API-Example.git
+cd Vobiz-Python-Voice-API-Example
 
 # Setup environment
 python -m venv venv
@@ -366,7 +366,19 @@ python make_call.py
 
 ---
 
-## ⚖️ License
-MIT License. Created for Vobiz Telephony integration patterns.
-Developed by Piyush Sahoo.
-# Vobiz-Python-XML
+## Built by Team Vobiz
+
+[Vobiz](https://vobiz.ai) is a programmable voice & SIP-trunking platform for
+voice APIs, SIP trunking, and AI voice agents. This repository is built and
+maintained by the Vobiz team.
+
+**Maintainer:** Piyush Sahoo — [piyush@vobiz.ai](mailto:piyush@vobiz.ai) · [LinkedIn](https://www.linkedin.com/in/piyush-s713/)
+
+Questions, or want to talk through an integration? Open an issue on this repo,
+or reach out directly at [piyush@vobiz.ai](mailto:piyush@vobiz.ai).
+
+**Useful links:** [Docs](https://docs.vobiz.ai) · [API reference](https://docs.vobiz.ai/api-reference) · [Sign up](https://vobiz.ai)
+
+## License
+
+[MIT](./LICENSE) © Vobiz

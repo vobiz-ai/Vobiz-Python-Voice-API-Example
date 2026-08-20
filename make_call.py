@@ -29,8 +29,8 @@ def make_call(to_number: str, from_number: str, answer_url: str):
     Make an outbound call using the Vobiz REST API.
 
     Args:
-        to_number: Destination phone number (e.g., +919876543210)
-        from_number: Caller ID / your Vobiz number (e.g., +919123456789)
+        to_number: Destination phone number (e.g., +15550003333)
+        from_number: Caller ID / your Vobiz number (e.g., +15550003333)
         answer_url: The URL Vobiz will call when the call connects
     """
     if not VOBIZ_AUTH_ID or not VOBIZ_AUTH_TOKEN:
@@ -89,14 +89,14 @@ def main():
         "--to",
         type=str,
         default=TO_NUMBER,
-        help="Destination phone number (e.g., +919876543210)",
+        help="Destination phone number (e.g., +15550003333)",
     )
     parser.add_argument(
         "--from",
         dest="from_number",
         type=str,
         default=FROM_NUMBER,
-        help="Caller ID / your Vobiz number (e.g., +919123456789)",
+        help="Caller ID / your Vobiz number (e.g., +15550003333)",
     )
     parser.add_argument(
         "--answer-url",
