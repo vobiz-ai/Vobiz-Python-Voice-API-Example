@@ -73,7 +73,7 @@ def make_call(to_number: str, from_number: str, answer_url: str):
 
     except requests.exceptions.HTTPError as e:
         print(f"❌ HTTP Error: {e}")
-        print(f"   Response: {e.response.text if e.response else 'No response'}")
+        print(f"   Response: {e.response.text if e.response is not None else 'No response'}")
         sys.exit(1)
     except requests.exceptions.ConnectionError:
         print(f"❌ Connection error. Check your internet and Vobiz API URL.")
